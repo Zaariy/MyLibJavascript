@@ -1,10 +1,16 @@
-class SinglePageJavascript {
+// import pages from file {ComponentAllpages.js}
+
+import { listPages } from "./pages/ComponentAllpages.js";
+
+export class SinglePageJavascript {
   // single page javascript library
   // with just one click
   constructor(idHtmlElement) {
     this.idHtmlElement = idHtmlElement;
     this.chickFunction();
+    // render page
   }
+
   chickFunction() {
     if (!location.hash) {
       location.hash = "#home";
@@ -14,19 +20,21 @@ class SinglePageJavascript {
   }
 
   switchContent(locationHash) {
-    var pages = {
-      home: "This is home Page",
-      about: "This is about Page",
-      contact: "This is contact Page",
-      Error: "Sorry this page is not Defined",
-    };
-    // If page is not  found
-    if (!pages[locationHash]) {
-      return pages.Error;
-    }
-    return pages[locationHash];
+    // Here we put all pages from folder pages pages.js
+    const arraySavePages = [];
+    const keys = Object.keys(listPages);
 
-    // console.log(pages[locationHash]);
+    for (let i = 0; i < keys.length; i++) {
+      arraySavePages[keys[i]] = listPages[keys[i]];
+    }
+
+    // If page is not  found
+    if (!arraySavePages[locationHash]) {
+      return arraySavePages.Error;
+    }
+    return arraySavePages[locationHash];
+
+    // console.log(listElementPages[0].element);
   }
 
   getIdElement() {
@@ -37,11 +45,3 @@ class SinglePageJavascript {
     )}</div>`; // this.chickFunction().substring(1)
   }
 }
-
-const singlePage = new SinglePageJavascript("root");
-// When do reload page
-window.onload = singlePage.getIdElement();
-//
-window.addEventListener("hashchange", function () {
-  singlePage.getIdElement();
-});
