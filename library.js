@@ -18,8 +18,15 @@ class SinglePageJavascript {
       home: "This is home Page",
       about: "This is about Page",
       contact: "This is contact Page",
+      Error: "Sorry this page is not Defined",
     };
+    // If page is not  found
+    if (!pages[locationHash]) {
+      return pages.Error;
+    }
     return pages[locationHash];
+
+    // console.log(pages[locationHash]);
   }
 
   getIdElement() {
@@ -27,7 +34,7 @@ class SinglePageJavascript {
       this.idHtmlElement
     ).innerHTML = `<div class="content"> ${this.switchContent(
       this.chickFunction().substring(1)
-    )}</div>`;
+    )}</div>`; // this.chickFunction().substring(1)
   }
 }
 
