@@ -28,3 +28,5 @@ export const listPages = {
   home: home,
   contact: contact,
 };
+
+export const idOfElementHtml = "Page";

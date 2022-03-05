@@ -1,12 +1,13 @@
 // import pages from file {ComponentAllpages.js}
 
 import { listPages } from "./pages/ComponentAllpages.js";
+import { idOfElementHtml } from "./pages/ComponentAllpages.js";
 
 export class SinglePageJavascript {
   // single page javascript library
   // with just one click
   constructor(idHtmlElement) {
-    this.idHtmlElement = idHtmlElement;
+    this.idHtmlElement = idHtmlElement || "root"; // Default name of element html is 'root'
     this.chickFunction();
     // render page
   }
@@ -45,3 +46,10 @@ export class SinglePageJavascript {
     )}</div>`; // this.chickFunction().substring(1)
   }
 }
+const singlePage = new SinglePageJavascript(idOfElementHtml);
+
+window.onload = singlePage.getIdElement();
+//
+window.addEventListener("hashchange", function () {
+  singlePage.getIdElement();
+});
