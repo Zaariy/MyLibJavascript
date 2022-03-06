@@ -1,0 +1,82 @@
+body {
+  background-color: rgb(33, 77, 119);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "sans-serf";
+  color: white;
+  font-family: "League Spartan", sans-serif;
+}
+.content {
+  height: 100vh;
+  width: 100%;
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.home a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+}
+.home .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.home .logo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.home > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+.home .logo::before {
+  content: "";
+  position: absolute;
+  border-color: yellow transparent yellow transparent;
+  /* border-left-color: black; */
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  animation: logotest 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes logotest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home .logo::after {
+  content: "";
+  position: absolute;
+  border-color: transparent black transparent black;
+  /* border-left-color: black; */
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}

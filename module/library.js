@@ -1,7 +1,6 @@
 // import pages from file {ComponentAllpages.js}
 
-import { listPages } from "./pages/ComponentAllpages.js";
-import { idOfElementHtml } from "./pages/ComponentAllpages.js";
+import { listPages, idOfElementHtml } from "../pages/ComponentAllpages.js";
 
 export class SinglePageJavascript {
   // single page javascript library
@@ -31,7 +30,7 @@ export class SinglePageJavascript {
 
     // If page is not  found
     if (!arraySavePages[locationHash]) {
-      return arraySavePages.Error;
+      return arraySavePages.error;
     }
     return arraySavePages[locationHash];
 

@@ -12,12 +12,24 @@ const about = `
 `;
 const home = `
 <div class="home">
-  <h1>Home page</h1>
+  <div>
+  <div class='logo'>
+  <h1>SPG</h1>
+  </div>
+    
+    <h2>Welcome in SPG library</h2>
+  </div>
+  <a href='https://github.com/Zaariy/MyLibJavascript' target='_blank' > Github Lib for Help </a>
 </div>
 `;
 const contact = `
 <div class="contact">
   <h1>contact single  page</h1>
+</div>
+`;
+const errorPage = `
+<div class="errorPage">
+<h1>Error Page isn't defined</h1>
 </div>
 `;
 
@@ -27,6 +39,9 @@ export const listPages = {
   about: about,
   home: home,
   contact: contact,
+
+  // this for error page like 404
+  error: errorPage,
 };
 
-export const idOfElementHtml = "Page";
+export const idOfElementHtml = "root";
